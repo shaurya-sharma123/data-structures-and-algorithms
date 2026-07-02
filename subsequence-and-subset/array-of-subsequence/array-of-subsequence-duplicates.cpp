@@ -1,9 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 std::vector<std::vector<int>> subsequencesDuplicates(const std::vector<int> &arr)
 {
-    std::vector<std::vector<int>> outer = {};
+    std::sort(arr.begin(), arr.end());
+    std::vector<std::vector<int>> outer = {{}};
     int start = 0, end = 0;
 
     for (int i = 0; i < arr.size(); i++)
@@ -32,6 +34,6 @@ std::vector<std::vector<int>> subsequencesDuplicates(const std::vector<int> &arr
 int main()
 {
     std::vector<int> arr = {1, 2, 2, 3};
-    subsequencesDuplicates(arr);
+    std::vector<std::vector<int>> res = subsequencesDuplicates(arr);
     return 0;
 }
