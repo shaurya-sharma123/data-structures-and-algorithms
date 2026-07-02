@@ -18,7 +18,7 @@ std::vector<std::string> permutations(std::string left, std::string right)
     {
         std::string first = left.substr(0, i), second = left.substr(i, left.size());
         std::vector<std::string> callFromBelow = permutations(first + ch + second, right.substr(1));
-        ans.insert(ans.end(), callFromBelow.begin(), callFromBelow.end());
+        ans.insert(ans.end(), callFromBelow.begin(), callFromBelow.end());  
     }
 
     return ans;
